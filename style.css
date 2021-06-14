@@ -1,7 +1,9 @@
 body{
-    text-align: center;
+    text-align:center;
+    background-image: url("https://t3.ftcdn.net/jpg/03/28/52/86/360_F_328528629_UCyh4ch4aRjbKaT4HxWGpTrLx2nmbHTv.jpg");
+    background-position:center;
+    background-size: cover;
 }
-div{
-    margin:10px auto;
-    padding:20px;
+canvas{
+    background-color: aliceblue;
 }
