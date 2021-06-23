@@ -1,9 +1,15 @@
 body{
-    text-align:center;
-    background-image: url("https://t3.ftcdn.net/jpg/03/28/52/86/360_F_328528629_UCyh4ch4aRjbKaT4HxWGpTrLx2nmbHTv.jpg");
-    background-position:center;
+    background-image:url("https://image.freepik.com/free-vector/pink-oil-painted-canvas-background_53876-93727.jpg");
+    background-position: center;
     background-size: cover;
 }
+h1{
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    
+}
 canvas{
-    background-color: aliceblue;
+    background-color: white;
+    border-width: 10px;
+    border-style: ridge;
 }
