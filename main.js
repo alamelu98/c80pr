@@ -1,36 +1,74 @@
-var canvs=new fabric.Canvas("myCanvas");
-//block width and height
-var b_w=30;
-var b_h=30;
-//position
-var play_x=10;
-var play_y=10;
-//object to store player and blocks
-var player_obj;
-var block_obj;
-function player_updater()
+var canvas=new fabric.Canvas("mycan");
+// Create canvas variable
+ block_y=1;
+ block_x=1;
+
+block_image_width = 350;
+block_image_height = 430;
+
+var block_image_object= "";
+
+function new_image(get_image)
 {
-	fabric.Image.fromURL("player.png",function(Img){
-		player_obj=Img;
-		player_obj.scaleToWidth(150);
-		player_obj.sclaeToHeight(150);
-		player_obj.set({
-			top:play_x,
-			left:play_y
-		});
-       canvas.add(player_obj);
+	// to upload images
+	fabric.Image.fromURL(get_image,function(Img)
+	{
+		block_image_object=Img;
+		block_image_object.scaleToWidth(block_image_width)
+		block_image_object.scaleToHeight(block_image_height)
+		block_image_object.set(
+			{
+				top:block_y,
+				left:block_x
+			}
+		)
+		canvas.add(block_image_object)
 	})
+
 }
-/*function block_updater()
+
+window.addEventListener("keydown", my_keydown);
+
+function my_keydown(e)
 {
-	fabric.Image.fromURL("player.png",function(Img){
-		player_obj=Img;
-		player_obj.scaleToWidth(150);
-		player_obj.sclaeToHeight(150);
-		player_obj.set({
-			top:play_x,
-			left:play_y
-		});
-       canvas.add(player_obj);
-	})
-}*/
+keyPressed = e.keyCode;
+console.log(keyPressed);
+
+	if(keyPressed == '82') // add appropriate keycode
+	{
+		// upload red ranger
+		new_image("rr.jpg");
+		console.log("red");
+	}
+	if(keyPressed == '71')
+	{
+		block_x = 200;
+		new_image("gr.png");
+		console.log("green");
+		// upload green ranger
+	}
+	
+	if(keyPressed == '89')
+	{
+		block_x =350;
+		new_image("yr.jpg");
+		console.log("yellow");
+		// upload yellow ranger
+	}
+	if(keyPressed == '80')
+	{
+		block_x = 600;
+		new_image("pr.png");
+		console.log("pink");
+		// upload pink ranger
+	}
+	if(keyPressed == '66')
+	{
+		block_x = 700;
+		new_image("br.png");
+		console.log("blue");
+	// upload blue ranger
+	}
+	
+}
+
